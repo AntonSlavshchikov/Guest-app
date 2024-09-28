@@ -16,7 +16,7 @@ db-migrate:
 db-migrate-rollback:
 	docker-compose exec app php artisa migrate:rollback
 
-init: env key up db-migrate
+init: env up key db-migrate
 
 test:
 	docker-compose exec app php artisan test
