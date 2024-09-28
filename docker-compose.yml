@@ -28,20 +28,5 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
 
-  composer:
-    build:
-      context: backend
-      dockerfile: composer.Dockerfile
-    volumes:
-      - db_data:/var/www/app
-
-  artisan:
-      build:
-        context: backend
-        dockerfile: Dockerfile
-      volumes:
-        - ./backend:/var/www/app
-      entrypoint: [ "php", "/var/www/app/artisan" ]
-
 volumes:
   db_data:
